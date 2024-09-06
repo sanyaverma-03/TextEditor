@@ -1,0 +1,12 @@
+.navBox {
+  padding: 1rem 2rem;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.text1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top:0.6rem;
+}
