@@ -1,4 +1,3 @@
-import styles from "./index.module.css";
 import React, { useState, useRef } from "react";
 import Button1 from "../../atoms/Button1";
 import { Container } from "reactstrap";
@@ -20,14 +19,24 @@ const AddPostForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!isFormValid) return;
     navigate("/post-preview", {
       state: { postTitle, content, postCategory },
     });
   };
 
+  const handleContentChange = (newContent) => {
+    setContent(newContent);
+  };
+
+  const isFormValid =
+    postTitle.trim() !== "" &&
+    content.trim() !== "" &&
+    postCategory.trim() !== "";
+
   return (
     <div style={{ margin: "20px" }}>
-      <h2 style={{ marginBottom: "1rem" }}>What's going in your mind?</h2>
+      <h2 style={{ marginBottom: "1rem" }}>What's going on in your mind?</h2>
       <form onSubmit={handleSubmit}>
         <div>
           <label>Post Title</label>
@@ -49,7 +58,7 @@ const AddPostForm = () => {
           <JoditEditor
             ref={editor}
             value={content}
-            onBlur={(newContent) => setContent(newContent)}
+            onChange={handleContentChange}
           />
         </div>
         <div>

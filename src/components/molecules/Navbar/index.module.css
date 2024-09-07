@@ -1,5 +1,5 @@
 .navBox {
-  padding: 1rem 2rem;
+  padding: 0rem 1rem;
   background-color: #f0f0f0;
   display: flex;
   justify-content: space-between;
@@ -8,5 +8,11 @@
 .text1 {
   font-size: 2rem;
   font-weight: bold;
-  margin-top:0.6rem;
+  margin-top: 0.6rem;
+}
+
+.chatImage {
+  width: 40px;
+  height: 40px;
+  margin-top: 1rem;
 }
